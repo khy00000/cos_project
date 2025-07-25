@@ -12,26 +12,24 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="./style/media.css" />
-
-    <!-- 스크립트 -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="./js/gapi.js"></script>
   </head>
 
   <body>
     <div id="wrap">
       <!-- 헤더 -->
       <header>
+        <!-- 띠 배너 영역 -->
         <div id="topnav">
           <div class="topnav_t">
             <span>위클리 신상품 업데이트 | </span>
             <a href="#none">여성 컬렉션</a>
             <a href="#none">남성 컬렉션</a>
+            <i class="bi bi-x-lg topnav_t_close"></i>
           </div>
           <div class="topnav_b">
             <span>카카오톡으로 신규 회원 가입 시 10% 할인 | </span>
             <a href="#none">가입하기</a>
+            <i class="bi bi-x-lg topnav_b_close"></i>
           </div>
         </div>
 
@@ -43,179 +41,117 @@
           <!-- 메뉴 영역 -->
           <div class="nav">
             <ul>
-              <li>
+              <li data-index="0">
                 <a href="#none">신상품</a>
-                <ul class="depth2">
-                  <li><a href="#none">의류</a></li>
-                  <li><a href="#none">악세사리</a></li>
-                  <p class="menu_memo">
-                    무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요
-                  </p>
-                  <div class="bgimg">
-                    <a href="#none"
-                      ><img src="./img/menubg1.jpg" alt="menubg1" width="300"
-                    /></a>
-                    <a href="#none">COS 신상품을 만나보세요</a>
-                  </div>
-                </ul>
               </li>
-              <li>
+              <li data-index="1">
                 <a href="#none">여성</a>
-                <ul class="depth2">
-                  <li><a href="#none">드레스</a></li>
-                  <li><a href="#none">탑</a></li>
-                  <li><a href="#none">트라우저&점프수트</a></li>
-                  <li><a href="#none">티셔츠</a></li>
-                  <li><a href="#none">셔츠&블라우스</a></li>
-                  <li><a href="#none">진</a></li>
-                  <li><a href="#none">니트웨어</a></li>
-                  <li><a href="#none">스커트</a></li>
-                  <p class="menu_memo">
-                    무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요
-                  </p>
-                  <div class="bgimg">
-                    <a href="#none"
-                      ><img src="./img/menubg2.jpg" alt="menubg2" width="300"
-                    /></a>
-                    <a href="#none">NEW IN: 여성 신상품</a>
-                  </div>
-                </ul>
               </li>
-              <li>
+              <li data-index="2">
                 <a href="#none">남성</a>
-                <ul class="depth2">
-                  <li><a href="#none">티셔츠</a></li>
-                  <li><a href="#none">셔츠</a></li>
-                  <li><a href="#none">트라우저</a></li>
-                  <li><a href="#none">폴로 셔츠</a></li>
-                  <li><a href="#none">니트웨어</a></li>
-                  <li><a href="#none">진</a></li>
-                  <li><a href="#none">코트 & 재킷</a></li>
-                  <li><a href="#none">수트 & 테일러링</a></li>
-                  <p class="menu_memo">
-                    무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요
-                  </p>
-                  <div class="bgimg">
-                    <a href="#none"
-                      ><img src="./img/menubg3.jpg" alt="menubg3" width="300"
-                    /></a>
-                    <a href="#none">NEW IN: 남성 신상품</a>
-                  </div>
-                </ul>
               </li>
-              <li>
+              <li data-index="3">
                 <a href="#none">썸머샵</a>
-                <ul class="depth2">
-                  <li><a href="#none">홀리데이 샵</a></li>
-                  <li><a href="#none">리넨 컬렉션</a></li>
-                  <li><a href="#none">여름 악세서리</a></li>
-                  <p class="menu_memo">
-                    무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요
-                  </p>
-                  <div class="bgimg">
-                    <a href="#none"
-                      ><img src="./img/menubg4.jpg" alt="menubg4" width="300"
-                    /></a>
-                    <a href="#none">여름 시즌을 위한 에센셜 스타일</a>
-                  </div>
-                </ul>
               </li>
-              <li>
+              <li data-index="4">
                 <a href="#none">매거진</a>
-                <ul class="depth2">
-                  <li><a href="#none">최신</a></li>
-                  <li><a href="#none">스토리</a></li>
-                  <li><a href="#none">인터뷰</a></li>
-                  <li><a href="#none">장소</a></li>
-                  <li><a href="#none">영감</a></li>
-                  <li><a href="#none">지속가능성</a></li>
-                  <p class="menu_memo">
-                    무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요
-                  </p>
-                  <div class="bgimg">
-                    <a href="#none"
-                      ><img src="./img/menubg5.jpg" alt="menubg5" width="300"
-                    /></a>
-                    <a href="#none">새로운 이야기로 돌아온 COS 매거진</a>
-                  </div>
-                </ul>
               </li>
             </ul>
           </div>
 
-          <!-- 모바일 -->
-          <a class="ham"><i class="bi bi-list"></i></a>
-          <div class="mobilebg">
-            <ul class="mobilenav">
-              <li>
-                <a href="login.html"
-                  >로그인 <i class="bi bi-person-plus"></i
-                ></a>
-              </li>
-              <li>
-                <a href="#none">신상품</a>
-                <ul class="mobiledepth2">
-                  <li><a href="#none">의류</a></li>
-                  <li><a href="#none">악세사리</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#none">여성</a>
-                <ul class="mobiledepth2">
-                  <li><a href="#none">드레스</a></li>
-                  <li><a href="#none">탑</a></li>
-                  <li><a href="#none">트라우저&점프수트</a></li>
-                  <li><a href="#none">티셔츠</a></li>
-                  <li><a href="#none">셔츠&블라우스</a></li>
-                  <li><a href="#none">진</a></li>
-                  <li><a href="#none">니트웨어</a></li>
-                  <li><a href="#none">스커트</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#none">남성</a>
-                <ul class="mobiledepth2">
-                  <li><a href="#none">티셔츠</a></li>
-                  <li><a href="#none">셔츠</a></li>
-                  <li><a href="#none">트라우저</a></li>
-                  <li><a href="#none">폴로 셔츠</a></li>
-                  <li><a href="#none">니트웨어</a></li>
-                  <li><a href="#none">진</a></li>
-                  <li><a href="#none">코트 & 재킷</a></li>
-                  <li><a href="#none">수트 & 테일러링</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#none">썸머샵</a>
-                <ul class="mobiledepth2">
-                  <li><a href="#none">홀리데이 샵</a></li>
-                  <li><a href="#none">리넨 컬렉션</a></li>
-                  <li><a href="#none">여름 악세서리</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#none">매거진</a>
-                <ul class="mobiledepth2">
-                  <li><a href="#none">최신</a></li>
-                  <li><a href="#none">스토리</a></li>
-                  <li><a href="#none">인터뷰</a></li>
-                  <li><a href="#none">장소</a></li>
-                  <li><a href="#none">영감</a></li>
-                  <li><a href="#none">지속가능성</a></li>
-                </ul>
-              </li>
+          <!-- 2 depth -->
+          <div class="depth2-wrap">
+            <ul class="depth2" data-index="0">
+              <li><a href="#none">의류</a></li>
+              <li><a href="#none">악세사리</a></li>
+              <p class="menu_memo">
+                무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요
+              </p>
+              <div class="bgimg">
+                <a href="#none"
+                  ><img src="./img/menubg1.jpg" alt="menubg1" width="300"
+                /></a>
+                <a href="#none">COS 신상품을 만나보세요</a>
+              </div>
             </ul>
-            <i class="bi bi-x-lg"></i>
+            <ul class="depth2" data-index="1">
+              <li><a href="#none">드레스</a></li>
+              <li><a href="#none">탑</a></li>
+              <li><a href="#none">트라우저&점프수트</a></li>
+              <li><a href="#none">티셔츠</a></li>
+              <li><a href="#none">셔츠&블라우스</a></li>
+              <li><a href="#none">진</a></li>
+              <li><a href="#none">니트웨어</a></li>
+              <li><a href="#none">스커트</a></li>
+              <p class="menu_memo">
+                무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요
+              </p>
+              <div class="bgimg">
+                <a href="#none"
+                  ><img src="./img/menubg2.jpg" alt="menubg2" width="300"
+                /></a>
+                <a href="#none">NEW IN: 여성 신상품</a>
+              </div>
+            </ul>
+            <ul class="depth2" data-index="2">
+              <li><a href="#none">티셔츠</a></li>
+              <li><a href="#none">셔츠</a></li>
+              <li><a href="#none">트라우저</a></li>
+              <li><a href="#none">폴로 셔츠</a></li>
+              <li><a href="#none">니트웨어</a></li>
+              <li><a href="#none">진</a></li>
+              <li><a href="#none">코트 & 재킷</a></li>
+              <li><a href="#none">수트 & 테일러링</a></li>
+              <p class="menu_memo">
+                무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요
+              </p>
+              <div class="bgimg">
+                <a href="#none"
+                  ><img src="./img/menubg3.jpg" alt="menubg3" width="300"
+                /></a>
+                <a href="#none">NEW IN: 남성 신상품</a>
+              </div>
+            </ul>
+            <ul class="depth2" data-index="3">
+              <li><a href="#none">썸머 샵</a></li>
+              <li><a href="#none">리넨 컬렉션</a></li>
+              <li><a href="#none">여름 악세서리</a></li>
+              <p class="menu_memo">
+                무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요
+              </p>
+              <div class="bgimg">
+                <a href="#none"
+                  ><img src="./img/menubg4.jpg" alt="menubg4" width="300"
+                /></a>
+                <a href="#none">여름 시즌을 위한 에센셜 스타일</a>
+              </div>
+            </ul>
+            <ul class="depth2" data-index="4">
+              <li><a href="#none">최신</a></li>
+              <li><a href="#none">스토리</a></li>
+              <li><a href="#none">인터뷰</a></li>
+              <li><a href="#none">장소</a></li>
+              <li><a href="#none">영감</a></li>
+              <li><a href="#none">지속가능성</a></li>
+              <p class="menu_memo">
+                무료배송, 무료반품 혜택과 함께 새로운 상품을 찾아보세요
+              </p>
+              <div class="bgimg">
+                <a href="#none"
+                  ><img src="./img/menubg5.jpg" alt="menubg5" width="300"
+                /></a>
+                <a href="#none">새로운 이야기로 돌아온 COS 매거진</a>
+              </div>
+            </ul>
           </div>
 
           <!-- 로그인 영역 -->
           <div class="gbnav">
             <a href="#none"><i class="bi bi-search"></i></a>
-            <a href="#none" class="mobilenone">검색</a>
-            <a href="login.html" class="mobilenone">로그인</a>
+            <a href="login.html">로그인</a>
             <a href="#none" class="country">배송국가 : </a>
-            <a href="#none"><i class="bi bi-heart"></i></a>
-            <a href="#none"><i class="bi bi-bag"></i></a>
+            <a href="#none" class="mobilenone"><i class="bi bi-heart"></i></a>
+            <a href="#none" class="mobilenone"><i class="bi bi-bag"></i></a>
           </div>
         </div>
       </header>
@@ -349,5 +285,9 @@
     <!-- 메뉴 오픈 전체 영역 화이트 효과 -->
     <div class="menueffect hidden">null</div>
 
+    <!-- 스크립트 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/gapi.js"></script>
   </body>
 </html>
