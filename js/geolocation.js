@@ -12,8 +12,11 @@ function success(position) {
   $.getJSON(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=931cf418021445795381368f79037456&units=Metric`,
   function(data){
     var $country = data.sys.country;
-    $('.country').append($country);
-  })
+
+    $('.country')
+    .text('배송국가 : ' + $country)
+    .show();
+  });
 }
 
 function error() {

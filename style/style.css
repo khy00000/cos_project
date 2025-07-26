@@ -23,6 +23,10 @@ body {
   color: #1b1b1b;
 }
 
+body.fixed-nav-padding {
+  padding-top: 70px;
+}
+
 ul,
 li {
   list-style: none;
@@ -33,20 +37,18 @@ a {
   text-decoration: none;
 }
 
-.hidden {
-  color: transparent;
+button {
+  all: unset;
+  cursor: pointer;
 }
 
-#wrap {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+.hidden {
+  color: transparent;
 }
 
 /* 헤더 */
 header {
   width: 100%;
-  height: 137px;
 }
 
 .topnav_t {
@@ -62,8 +64,9 @@ header {
   position: relative;
 }
 
-.topnav_t a {
+.topnav_t span a {
   color: white;
+  text-decoration: underline;
 }
 
 .topnav_t_close {
@@ -85,6 +88,10 @@ header {
   position: relative;
 }
 
+.topnav_b span a {
+  text-decoration: underline;
+}
+
 .topnav_b_close {
   position: absolute;
   top: 50%;
@@ -103,11 +110,17 @@ header {
   justify-content: space-between;
   background-color: white;
   border-bottom: 1px solid rgb(40, 40, 40);
-  padding: 0 5rem 0 10rem;
+  padding: 0 7rem 0 7rem;
 }
 
 #nav.active {
   border-bottom: unset;
+}
+
+#nav.fixed {
+  position: fixed !important;
+  top: 0;
+  left: 0;
 }
 
 .logo {
@@ -152,7 +165,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .gbnav a {
@@ -163,18 +176,26 @@ header {
   color: #a0a0a0;
 }
 
+/* 위치 정보 */
+.country{
+display: none;
+}
+
 /* 2뎁스 메뉴 */
 .depth2-wrap {
   position: absolute;
   top: 69px;
   left: 0;
   width: 100%;
-  height: 450px;
-  display: none;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 0.5s ease, opacity 0.5s ease;
 }
 
 .depth2-wrap.active {
-  display: block;
+  opacity: 1;
+  height: 450px;
 }
 
 .depth2 {
@@ -183,68 +204,72 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 0;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(40, 40, 40);
-  transition: all 0.5s ease-in;
+  height: 450px;
+  background-color: white;
+  border-bottom: 1px solid #282828;
+  transition: opacity 0.5s ease;
   opacity: 0;
+  padding: 3rem 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .depth2.active {
   opacity: 1;
-  height: 450px;
 }
 
-.depth2 li:first-child {
-  margin-top: 20px;
+.depth2 .depth2-l {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.depth2 li a {
-  margin-left: 70px;
+.depth2 .depth2-l div a {
+  padding-bottom: 15px;
   display: block;
-  padding: 10px 30px;
   font-size: 0.9rem;
 }
 
-.depth2 li:hover a {
+.depth2 .depth2-l a:hover {
   color: #a0a0a0;
+}
+
+.depth2 .depth2-l .menu_memo {
+  color: #b89977;
+  font-size: 0.8rem;
+}
+
+.depth2 .depth2-r {
+  height: 100%;
+}
+
+.depth2 .depth2-r a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 0.8rem;
 }
 
 /* 메뉴 오픈 전체 영역 화이트 효과 */
 .menueffect {
   width: 100%;
-  height: 0;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.881);
   position: absolute;
   top: 0;
   left: 0;
   transition: all 0.5s ease-in;
   opacity: 0;
+  visibility: hidden;
 }
 
 .menueffect.active {
-  height: 2710px;
   opacity: 1;
-}
-
-.menu_memo {
-  position: absolute;
-  bottom: 25px;
-  left: 100px;
-  color: #b89977;
-  font-size: 0.8rem;
-}
-
-.bgimg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 20px;
-  position: absolute;
-  top: 60px;
-  right: 50px;
-  font-size: 0.8rem;
+  visibility: visible;
 }
 
 /* 섹션 메인 이미지 영역*/

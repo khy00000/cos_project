@@ -1,3 +1,13 @@
+// 띠 배너 닫기
+$(".topnav_t_close").on("click", function () {
+  $(".topnav_t").hide();
+});
+
+$(".topnav_b_close").on("click", function () {
+  $(".topnav_b").hide();
+});
+
+
 // 헤더 2뎁스 메뉴 활성
 $(".nav>ul>li").on("mouseenter", function () {
   const index = $(this).data("index");
@@ -24,6 +34,20 @@ $(".nav, .depth2-wrap").on("mouseleave", function () {
 
 $(".nav, .depth2-wrap").on("mouseenter", function () {
   clearTimeout(menuCloseTimer);
+});
+
+// 헤더 픽스
+$(window).on("scroll", function() {
+    const scrollTop = $(window).scrollTop();
+    const topnavHeight = $("#topnav").outerHeight();
+
+    if (scrollTop >= topnavHeight) {
+        $("#nav").addClass("fixed");
+        $("body").addClass("fixed-nav-padding");
+    } else {
+        $("#nav").removeClass("fixed");
+        $("body").removeClass("fixed-nav-padding");
+    }
 });
 
 // 모바일 메뉴
