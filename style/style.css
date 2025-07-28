@@ -1,11 +1,11 @@
 @charset "utf-8";
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@350;600&display=swap");
 
 /* 리셋 */
 html {
   font-family: "Noto Sans KR", sans-serif;
-  font-weight: 600;
+  font-weight: 350;
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: white;
@@ -20,7 +20,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  color: #1b1b1b;
+  color: #282828;
 }
 
 body.fixed-nav-padding {
@@ -33,7 +33,7 @@ li {
 }
 
 a {
-  color: #1b1b1b;
+  color: #282828;
   text-decoration: none;
 }
 
@@ -109,12 +109,12 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  border-bottom: 1px solid rgb(40, 40, 40);
   padding: 0 7rem 0 7rem;
+  border-bottom: 1px solid #282828;
 }
 
 #nav.active {
-  border-bottom: unset;
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 #nav.fixed {
@@ -181,17 +181,19 @@ header {
 /* 2뎁스 메뉴 */
 .depth2-wrap {
   position: absolute;
-  top: 69px;
+  top: 70px;
   left: 0;
   width: 100%;
-  height: 0;
-  opacity: 0;
   overflow: hidden;
   transition: height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
 }
 
 .depth2-wrap.active {
   opacity: 1;
+  visibility: visible;
   height: 450px;
 }
 
@@ -206,6 +208,7 @@ header {
   border-bottom: 1px solid #282828;
   transition: opacity 0.5s ease;
   opacity: 0;
+  visibility: hidden;
   padding: 3rem 7rem;
   display: flex;
   align-items: center;
@@ -214,6 +217,7 @@ header {
 
 .depth2.active {
   opacity: 1;
+  visibility: visible;
 }
 
 .depth2 .depth2-l {
@@ -229,8 +233,8 @@ header {
   font-size: 0.9rem;
 }
 
-.depth2 .depth2-l a:hover {
-  color: #a0a0a0;
+.depth2 .depth2-l div a:hover {
+  color: #a0a0a0 !important;
 }
 
 .depth2 .depth2-l .menu_memo {
@@ -363,11 +367,11 @@ article {
 }
 
 .at_shopping:hover {
-  color: #a0a0a0;
+  color: #e0e0e0;
 }
 
 #article_b {
-  border-top: 1px solid rgb(40, 40, 40);
+  border-top: 1px solid #282828;
   width: 100%;
   height: 260px;
   display: flex;
@@ -392,26 +396,30 @@ article {
   text-decoration: none;
   padding: 10px 30px;
   background-color: white;
-  border: 1px solid rgb(40, 40, 40);
+  border: 1px solid #282828;
 }
 
 .article_more a:hover {
-  background-color: #d1d1d1;
+  background-color: #e0e0e0;
 }
 
 /* 서비스 */
 #service {
-  border-top: 1px solid rgb(40, 40, 40);
+  border-top: 1px solid #282828;
   padding: 50px 0 0 50px;
   width: 100%;
   height: 300px;
   display: flex;
 }
 
-.service-l,
-.service-center,
-.service-r {
+.service-wrap {
   width: 20%;
+}
+
+.service-wrap h2 {
+  padding-bottom: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 #service ul li a {
@@ -419,6 +427,7 @@ article {
   padding-bottom: 5px;
   font-size: 0.8rem;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 /* 푸터 */

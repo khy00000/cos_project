@@ -51,10 +51,11 @@
   #service {
     height: 340px;
   }
+}
 
-  .service-l,
-  footer #footer-logo {
-    width: 15%;
+@media (max-width: 1080px) {
+  footer ul li {
+    font-size: 0.7rem;
   }
 }
 
@@ -62,6 +63,10 @@
   #nav {
     height: 50px;
     padding: 0 2rem;
+  }
+
+  .depth2-wrap {
+    top: 50px;
   }
 
   section {
@@ -89,33 +94,59 @@
     padding: 0 20px 40px 20px;
   }
 
+  #article_b {
+    height: 300px;
+  }
+
   #service {
-    height: 280px;
-    justify-content: center;
-    gap: 160px;
+    flex-direction: column;
+    padding: 0;
+    height: auto;
   }
 
-  footer {
-    justify-content: center;
-    gap: 80px;
+  #service .service-wrap {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid;
+    position: relative;
+    cursor: pointer;
   }
 
-  #service ul:first-child {
-    margin-left: unset;
+  #service .service-wrap:last-child {
+    border-bottom: unset;
   }
 
-  #service ul li a {
-    font-size: 0.8rem;
+  .service-wrap h2 {
+    position: relative;
   }
 
-  footer ul li {
-    font-size: 0.6rem;
+  .service-wrap h2::after {
+    content: "\F4FE";
+    font-family: "bootstrap-icons";
+    position: absolute;
+    right: 5px;
   }
 
-  #footer_logo,
-  footer ul {
-    margin-left: unset;
-    margin-right: unset;
+  .service-wrap.active h2::after {
+    content: "\F2EA";
+  }
+
+  .service-wrap div {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .service-wrap.active div {
+    max-height: 200px;
+  }
+
+  .service-wrap ul {
+    padding: 30px 0;
+  }
+
+  .service-wrap ul li a {
+    padding-bottom: 10px;
   }
 }
 

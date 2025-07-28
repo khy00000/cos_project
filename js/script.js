@@ -101,3 +101,15 @@ $(function () {
     }, 3000);
   }
 });
+
+// 서비스 모바일 버전
+$(".service-wrap").on("click", function () {
+  const $target = $(this);
+  const isActive = $target.hasClass("active");
+
+  $target.removeClass("active");
+
+  if (!isActive) {
+    $target.addClass("active");
+  }
+});
