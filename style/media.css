@@ -10,24 +10,24 @@
     padding: 0 5rem;
   }
 
-  .logo a img{
+  .logo a img {
     width: 80px;
   }
 
   .nav > ul > li > a {
-    padding: 17px 22px;
+    padding: 1.0625rem 1.375rem;
     font-size: 1rem;
   }
 
-  .depth2-wrap{
+  .depth2-wrap {
     top: 60px;
   }
 
-  .depth2{
+  .depth2 {
     padding: 3rem 5rem;
   }
 
-  .gbnav{
+  .gbnav {
     gap: 17px;
   }
 
@@ -39,13 +39,12 @@
     height: calc(100vh - 124px);
   }
 
-  section .female a,
-  section .male a,
-  .at_name {
+  section .section-wrap .female a,
+  section .section-wrap .male a {
     font-size: 1rem;
   }
 
-  #article_t{
+  #article_t {
     font-size: 1.7rem;
   }
 
@@ -53,111 +52,35 @@
     height: 340px;
   }
 
-  #footer_logo {
-    margin-right: 145px;
-  }
-
-  footer ul {
-    margin-right: 80px;
-  }
-}
-
-@media (max-width: 1190px) {
-  .logo {
-    width: 25%;
-  }
-
-  .nav {
-    width: 46%;
-  }
-
-  .nav > ul > li > a {
-    padding: 20px 25px;
-  }
-
-  .gbnav {
-    width: 29%;
-  }
-
-  .gbnav a {
-    margin-right: 17px;
-  }
-
-  #service {
-    gap: 148px;
-    padding-left: 21px;
-  }
-
-  footer ul li {
-    font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 1084px) {
-  .logo {
-    width: 13%;
-  }
-  .nav {
-    width: 52%;
-  }
-  .gbnav {
-    width: 35%;
-    margin-right: unset;
-  }
-  .nav > ul > li > a {
-    padding: 23px 20px;
-  }
-  #service {
-    justify-content: center;
-    gap: 160px;
-    padding-left: unset;
-  }
-  #service ul li a {
-    font-size: 0.8rem;
-    text-align: center;
-  }
-  footer {
-    padding: 40px;
-    gap: 40px;
-  }
-  #footer_logo {
-    margin-right: unset;
-    margin-left: unset;
-  }
-  footer ul {
-    margin-right: unset;
+  .service-l,
+  footer #footer-logo {
+    width: 15%;
   }
 }
 
 @media (max-width: 1024px) {
-  header {
-    height: auto;
+  #nav {
+    height: 50px;
+    padding: 0 2rem;
   }
 
-  .topnav_t {
-    display: none;
+  section {
+    height: calc(100vh - 114px);
+    overflow: hidden;
+    position: relative;
   }
 
-  .logo,
-  .gbnav {
-    width: 25%;
+  .section-wrap {
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
   }
 
-  .nav {
-    width: 50%;
-  }
-
-  .logo a img {
-    width: 80px;
-  }
-
-  .nav > ul > li > a {
-    font-size: 1em;
-  }
-
-  .gbnav a {
-    font-size: 0.8rem;
-    margin-right: 10px;
+  section .section-wrap .female,
+  section .section-wrap .male {
+    flex-shrink: 0;
+    width: 100vw;
+    align-items: flex-end;
+    padding-bottom: 60px;
   }
 
   #article_m {
@@ -197,12 +120,6 @@
 }
 
 @media (max-width: 768px) {
-  .ham,
-  .mobilebg,
-  .mosec {
-    display: block;
-  }
-
   .nav {
     display: none;
   }
@@ -211,15 +128,6 @@
     width: 100%;
     height: 110px;
     position: fixed;
-  }
-
-  .ham {
-    z-index: 2;
-    position: fixed;
-    top: 52px;
-    left: 20px;
-    font-size: 1.8rem;
-    margin-left: 30px;
   }
 
   .bi-search,
@@ -241,13 +149,6 @@
     position: absolute;
     right: 0;
     gap: 30px;
-  }
-
-  .menu_memo,
-  .bgimg,
-  .mobilenone,
-  .country {
-    display: none;
   }
 
   /* 모바일 배경 */
@@ -302,70 +203,6 @@
     position: absolute;
     top: 1%;
     right: 5%;
-  }
-
-  /* 섹션 이미지 슬라이드 */
-  section {
-    display: none;
-  }
-
-  .mosec {
-    z-index: -1;
-    width: 100%;
-    height: 1070px;
-    position: relative;
-  }
-
-  .mofix {
-    width: 100%;
-    height: 110px;
-    background-color: #fff;
-  }
-
-  #slider {
-    overflow: hidden;
-  }
-
-  .sliderWrap {
-    width: 300%;
-    height: 960px;
-    display: flex;
-  }
-
-  .sliderWrap .slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .sliderWrap .slider.s1 {
-    background-image: url(../img/section1.jpg);
-  }
-
-  .sliderWrap .slider.s2 {
-    background-image: url(../img/section2.jpg);
-  }
-
-  .mosec a {
-    width: 170px;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    padding: 10px 30px;
-    background-color: white;
-    border: 1px solid rgb(40, 40, 40);
-    position: relative;
-    bottom: 200px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-bottom: 10px;
-  }
-
-  .mosec a:hover {
-    background-color: rgba(255, 255, 255, 0.571);
   }
 
   footer {

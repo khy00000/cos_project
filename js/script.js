@@ -7,7 +7,6 @@ $(".topnav_b_close").on("click", function () {
   $(".topnav_b").hide();
 });
 
-
 // 헤더 2뎁스 메뉴 활성
 $(".nav>ul>li").on("mouseenter", function () {
   const index = $(this).data("index");
@@ -37,17 +36,17 @@ $(".nav, .depth2-wrap").on("mouseenter", function () {
 });
 
 // 헤더 픽스
-$(window).on("scroll", function() {
-    const scrollTop = $(window).scrollTop();
-    const topnavHeight = $("#topnav").outerHeight();
+$(window).on("scroll", function () {
+  const scrollTop = $(window).scrollTop();
+  const topnavHeight = $("#topnav").outerHeight();
 
-    if (scrollTop >= topnavHeight) {
-        $("#nav").addClass("fixed");
-        $("body").addClass("fixed-nav-padding");
-    } else {
-        $("#nav").removeClass("fixed");
-        $("body").removeClass("fixed-nav-padding");
-    }
+  if (scrollTop >= topnavHeight) {
+    $("#nav").addClass("fixed");
+    $("body").addClass("fixed-nav-padding");
+  } else {
+    $("#nav").removeClass("fixed");
+    $("body").removeClass("fixed-nav-padding");
+  }
 });
 
 // 모바일 메뉴
@@ -70,19 +69,35 @@ $(window).on("scroll", function() {
 
 // 모바일 섹션 슬라이드
 $(function () {
-  let currentIndex = 0; //현재 이미지
-  $(".sliderWrap").append($(".slider").first().clone(true)); //첫번째 이미지를 복사해서 마지막에 추가
+  if ($(window).width() <= 1024) {
+    const $wrap = $(".section-wrap");
+    const $slides = $wrap.children();
+    const total = $slides.length;
+    let current = 0;
 
-  setInterval(() => {
-    currentIndex++; //현재 이미지를 1씩 추가
-    $(".sliderWrap").animate({ marginLeft: -100 * currentIndex + "%" }, 600); //이미지 애니메이션
+    $wrap.append($slides.clone());
 
-    if (currentIndex == 2) {
-      //마지막 이미지
-      setTimeout(() => {
-        $(".sliderWrap").animate({ marginLeft: 0 }, 0); //애니메이션 정지
-        currentIndex = 0; //현재 이미지 초기화
-      }, 700);
+    function goToSlide(index) {
+      $wrap.css("transition", "transform 0.6s ease-in-out");
+      $wrap.css("transform", `translateX(${-100 * index}vw)`);
     }
-  }, 3000);
+
+    function resetPosition() {
+      $wrap.css("transition", "none");
+      $wrap.css("transform", `translateX(0vw)`);
+      current = 0;
+    }
+
+    setInterval(() => {
+      current++;
+      goToSlide(current);
+
+      // 원본 끝나면 리셋 (복제 포함 기준)
+      if (current >= total) {
+        setTimeout(() => {
+          resetPosition(); // 0으로 돌아감
+        }, 600); // transition 끝날 때쯤
+      }
+    }, 3000);
+  }
 });

@@ -149,7 +149,7 @@ header {
 
 .nav > ul > li > a {
   display: block;
-  padding: 21px 25px;
+  padding: 1.3125rem 1.5625rem;
   font-size: 1.2rem;
 }
 
@@ -174,8 +174,8 @@ header {
 }
 
 /* 위치 정보 */
-.country{
-display: none;
+.country {
+  display: none;
 }
 
 /* 2뎁스 메뉴 */
@@ -273,14 +273,19 @@ display: none;
 section {
   width: 100%;
   height: calc(100vh - 138px);
-  display: flex;
 }
 
-section .female {
+.section-wrap {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+section .section-wrap .female {
   width: 50%;
   height: 100%;
   background-image: url(../img/section1.jpg);
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -288,11 +293,11 @@ section .female {
   justify-content: center;
 }
 
-section .male {
+section .section-wrap .male {
   width: 50%;
   height: 100%;
   background-image: url(../img/section2.jpg);
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -300,8 +305,8 @@ section .male {
   justify-content: center;
 }
 
-section .female a,
-section .male a {
+section .section-wrap .female a,
+section .section-wrap .male a {
   text-decoration: none;
   padding: 10px 30px;
   background-color: white;
@@ -397,15 +402,16 @@ article {
 /* 서비스 */
 #service {
   border-top: 1px solid rgb(40, 40, 40);
-  padding-top: 50px;
+  padding: 50px 0 0 50px;
   width: 100%;
   height: 300px;
   display: flex;
-  gap: 170px;
 }
 
-#service ul:first-child {
-  margin-left: 50px;
+.service-l,
+.service-center,
+.service-r {
+  width: 20%;
 }
 
 #service ul li a {
@@ -421,17 +427,12 @@ footer {
   height: auto;
   display: flex;
   background-color: #e0e0e0;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 0 50px 50px;
 }
 
-#footer_logo {
-  margin-left: 50px;
-  margin-right: 150px;
-}
-
-footer ul {
-  margin-right: 80px;
+footer #footer-logo,
+.footer-center {
+  width: 20%;
 }
 
 footer ul li {
@@ -445,11 +446,4 @@ footer ul li {
 
 .copyright {
   padding-top: 30px;
-}
-
-/* 모바일 */
-.ham,
-.mobilebg,
-.mosec {
-  display: none;
 }
