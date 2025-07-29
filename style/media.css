@@ -86,6 +86,7 @@
     width: 100vw;
     align-items: flex-end;
     padding-bottom: 60px;
+    cursor: pointer;
   }
 
   #article_m {
@@ -106,7 +107,7 @@
 
   #service .service-wrap {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     border-bottom: 1px solid;
     position: relative;
     cursor: pointer;
@@ -118,6 +119,7 @@
 
   .service-wrap h2 {
     position: relative;
+    padding-bottom: unset;
   }
 
   .service-wrap h2::after {
@@ -142,277 +144,44 @@
   }
 
   .service-wrap ul {
-    padding: 30px 0;
+    padding: 20px 0;
   }
 
   .service-wrap ul li a {
     padding-bottom: 10px;
   }
+
+  footer #footer-logo,
+  .footer-center {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+  }
+
+  footer ul li {
+    font-size: 0.8rem;
+  }
+
+  .footer-center li {
+    display: inline-block;
+  }
+
+  .footer-center li.hd {
+    display: block;
+    padding-top: 5px;
+  }
+
+  .copyright{
+    padding-top: 20px;
+  }
 }
 
 @media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-
-  header {
-    width: 100%;
-    height: 110px;
-    position: fixed;
-  }
-
-  .bi-search,
-  .bi-person-plus,
-  .bi-heart,
-  .bi-bag {
-    font-size: 1.5rem;
-  }
-
-  .logo {
-    width: unset;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .gbnav {
-    position: absolute;
-    right: 0;
-    gap: 30px;
-  }
-
-  /* 모바일 배경 */
-  .mobilebg {
-    z-index: 3;
-    width: 100%;
-    height: 3421px;
-    background-color: rgba(0, 0, 0, 0.499);
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  /* 모바일 메뉴 */
-  .mobilenav {
-    width: 70%;
-    height: 3421px;
-    background-color: #fff;
-    position: relative;
-  }
-
-  .mobilenav > li > a {
-    text-decoration: none;
-    display: block;
-    padding: 20px 40px;
-    font-size: 1.2rem;
-  }
-
-  .mobilenav > li:hover > a {
-    color: #a0a0a0;
-  }
-
-  .mobilebg,
-  .mobiledepth2 {
-    display: none;
-  }
-
-  .mobiledepth2 li a {
-    text-decoration: none;
-    display: block;
-    padding: 10px 40px;
-    font-size: 1rem;
-  }
-
-  .mobiledepth2 li:hover > a {
-    color: #a0a0a0;
-  }
-
-  .bi-x-lg {
-    font-size: 1.3rem;
-    color: #fff;
-    position: absolute;
-    top: 1%;
-    right: 5%;
-  }
-
-  footer {
-    flex-wrap: wrap;
-    gap: 100px;
-  }
-
-  #service ul li a,
-  footer ul li {
-    text-align: center;
-  }
-}
-
-@media (max-width: 590px) {
-  .mosec {
-    height: 860px;
-  }
-
-  .sliderWrap {
-    height: 750px;
-  }
-
-  #service {
-    gap: 100px;
-  }
-
-  footer {
-    gap: 80px;
-    row-gap: 40px;
-  }
-
-  .copyright {
-    padding-top: 15px;
-  }
-}
-
-@media (max-width: 555px) {
-  .bi-search {
-    position: fixed;
-    top: 56px;
-    left: 110px;
-  }
-
-  .mosec {
-    height: 810px;
-  }
-
-  .sliderWrap {
-    height: 700px;
-  }
-}
-
-@media (max-width: 490px) {
-  .mosec {
-    height: 725px;
-  }
-
-  .sliderWrap {
-    height: 615px;
-  }
-
-  #service {
-    gap: 60px;
-  }
-
-  footer {
-    padding: 50px;
-    justify-content: unset;
-    row-gap: 40px;
-  }
-
-  footer ul li {
-    text-align: unset;
-    font-size: 0.8rem;
-  }
-
-  .copyright {
-    padding-top: 40px;
-  }
-}
-
-@media (max-width: 450px) {
-  .topnav_b {
-    font-size: 0.8rem;
-  }
-
-  .ham {
-    left: -5px;
-  }
-
-  .bi-search {
-    left: 72px;
-  }
-
-  .gbnav {
-    gap: 15px;
-    margin-right: 14px;
-  }
-
-  .mosec {
-    height: 670px;
-  }
-
-  .sliderWrap {
-    height: 560px;
-  }
-
-  footer {
-    padding: 36px;
-  }
 }
 
 @media (max-width: 375px) {
-  .ham {
-    font-size: 1.5rem;
-    top: 56px;
-  }
-
-  .bi-search,
-  .bi-heart,
-  .bi-bag {
-    font-size: 1.3rem;
-  }
-
-  .bi-search {
-    top: 59px;
-  }
-
-  .mosec {
-    height: 570px;
-  }
-
-  .sliderWrap {
-    height: 460px;
-  }
-
-  #article_t {
-    font-size: 1.7rem;
-    height: 110px;
-  }
-
-  #article_b {
-    height: 222px;
-  }
-
-  footer {
-    gap: 57px;
-    padding: 20px;
-  }
-}
-
-@media (max-width: 375px) {
-  .article_more a {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-  }
-
-  footer {
-    gap: 47px;
-    row-gap: 10px;
-  }
-}
-
-@media (max-width: 357px) {
-  .mosec {
-    height: 550px;
-  }
-
-  .sliderWrap {
-    height: 440px;
-  }
-
-  #service {
-    gap: 37px;
-  }
-
-  footer {
-    gap: 41px;
-    row-gap: 29px;
-    padding: 12px;
-  }
 }

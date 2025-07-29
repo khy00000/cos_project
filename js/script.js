@@ -98,7 +98,7 @@ $(function () {
           resetPosition(); // 0으로 돌아감
         }, 600); // transition 끝날 때쯤
       }
-    }, 3000);
+    }, 5000);
   }
 });
 
