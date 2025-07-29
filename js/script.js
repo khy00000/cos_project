@@ -49,7 +49,15 @@ $(window).on("scroll", function () {
   }
 });
 
-// 모바일 메뉴 토글
+// 모바일 메뉴 오픈
+$(".mo-button").on("click", function () {
+  const isActive = $(this).hasClass("active");
+
+  $(this).toggleClass("active");
+  $(".m-nav").toggleClass("active");
+});
+
+// 모바일 12depth 메뉴 토글
 $(".m-depth1 > li").on("click", function () {
   const isActive = $(this).hasClass("active");
 

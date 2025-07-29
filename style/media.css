@@ -65,6 +65,11 @@
     padding: 0 15px;
   }
 
+  .topnav_t_close,
+  .topnav_b_close {
+    right: 15px;
+  }
+
   #nav .nav {
     display: none;
   }
@@ -78,21 +83,44 @@
     display: none !important;
   }
 
+  .gbnav {
+    position: absolute;
+    right: 50px;
+    gap: 20px;
+  }
+
+  .mo-button {
+    display: block;
+  }
+
+  .mo-button.active .bi-list::before {
+    content: "\f659";
+  }
+
   .m-nav {
+    z-index: 2;
     width: 100%;
-    height: 500px;
+    height: auto;
     background-color: white;
     position: absolute;
-    top: 49px;
+    top: 112px;
     left: 0;
-    display: block;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 250px;
+    border-bottom: 1px solid #282828;
+  }
+
+  .m-nav.active{
+    display: flex !important;
   }
 
   .m-depth1 > li {
     font-size: 0.8rem;
     padding: 15px;
     cursor: pointer;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #e0e0e0;
   }
 
   .m-depth1-title {
@@ -108,7 +136,7 @@
     content: "\F4FE";
     font-family: "bootstrap-icons";
     position: absolute;
-    right: 5px;
+    right: 0;
   }
 
   .m-depth1 > li.active > a::after {
@@ -140,6 +168,17 @@
 
   .m-depth2 li:last-child a {
     padding-bottom: unset;
+  }
+
+  /* 모바일용 글로벌 메뉴 */
+  .m-gbnav-dep2 li {
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .m-gbnav-dep2 li a {
+    display: block;
+    font-size: 0.8rem;
+    padding: 15px;
   }
 
   section {
@@ -199,7 +238,7 @@
     content: "\F4FE";
     font-family: "bootstrap-icons";
     position: absolute;
-    right: 5px;
+    right: 0;
   }
 
   .service-wrap.active h2::after {
@@ -221,7 +260,7 @@
   }
 
   .service-wrap ul li a {
-    padding-bottom: 10px;
+    padding-bottom: 15px !important;
   }
 
   footer #footer-logo,

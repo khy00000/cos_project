@@ -101,7 +101,7 @@ header {
 
 /* 메뉴 영역 */
 #nav {
-  z-index: 2;
+  z-index: 4;
   position: relative;
   width: 100%;
   height: 70px;
@@ -273,7 +273,7 @@ header {
   display: none;
 }
 
-.mo_button, .m-nav{
+.mo-button, .m-nav{
   display: none;
 }
 
