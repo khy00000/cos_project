@@ -49,23 +49,16 @@ $(window).on("scroll", function () {
   }
 });
 
-// 모바일 메뉴
-// $(function(){
-//     $('.mobilenav>li').mouseover(function(){
-//         $(this).find('.mobiledepth2').stop().slideDown(200);
-//     });
-//     $('.mobilenav>li').mouseout(function(){
-//         $(this).find('.mobiledepth2').stop().slideUp(200);
-//     });
+// 모바일 메뉴 토글
+$(".m-depth1 > li").on("click", function () {
+  const isActive = $(this).hasClass("active");
 
-//     // 메뉴 쇼 하이드
-//     $('.ham').click(function(){
-//         $('.mobilebg').show();
-//         $('.bi-x-lg').click(function(){
-//             $('.mobilebg').hide();
-//         });
-//     });
-// });
+  $(this).removeClass("active");
+
+  if (!isActive) {
+    $(this).addClass("active");
+  }
+});
 
 // 모바일 섹션 슬라이드
 $(function () {
@@ -92,7 +85,7 @@ $(function () {
       current++;
       goToSlide(current);
 
-      // 원본 끝나면 리셋 (복제 포함 기준)
+      // 원본 끝나면 리셋
       if (current >= total) {
         setTimeout(() => {
           resetPosition(); // 0으로 돌아감
@@ -102,7 +95,7 @@ $(function () {
   }
 });
 
-// 서비스 모바일 버전
+// 모바일 서비스 아코디언 메뉴
 $(".service-wrap").on("click", function () {
   const $target = $(this);
   const isActive = $target.hasClass("active");

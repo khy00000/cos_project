@@ -157,27 +157,6 @@ header {
   color: #a0a0a0;
 }
 
-/* 로그인 영역 */
-.gbnav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.gbnav a {
-  font-size: 0.9rem;
-}
-
-.gbnav a:hover {
-  color: #a0a0a0;
-}
-
-/* 위치 정보 */
-.country {
-  display: none;
-}
-
 /* 2뎁스 메뉴 */
 .depth2-wrap {
   position: absolute;
@@ -271,6 +250,31 @@ header {
 .menueffect.active {
   opacity: 1;
   visibility: visible;
+}
+
+/* 로그인 영역 */
+.gbnav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gbnav a {
+  font-size: 0.9rem;
+}
+
+.gbnav a:hover {
+  color: #a0a0a0;
+}
+
+/* 위치 정보 */
+.country {
+  display: none;
+}
+
+.mo_button, .m-nav{
+  display: none;
 }
 
 /* 섹션 메인 이미지 영역*/
