@@ -60,6 +60,15 @@
 }
 
 @media (max-width: 1024px) {
+  html.m-nav-open {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  .m-nav {
+    overflow-y: auto;
+  }
+
   #nav {
     height: 50px;
     padding: 0 15px;
@@ -100,19 +109,22 @@
   .m-nav {
     z-index: 2;
     width: 100%;
-    height: auto;
+    height: calc(100vh - 112px);
     background-color: white;
     position: absolute;
-    top: 112px;
+    top: 50px;
     left: 0;
     display: none;
     flex-direction: column;
     justify-content: space-between;
     gap: 250px;
     border-bottom: 1px solid #282828;
+    transition: height 0.3s ease-in;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .m-nav.active{
+  .m-nav.active {
     display: flex !important;
   }
 
@@ -252,7 +264,7 @@
   }
 
   .service-wrap.active div {
-    max-height: 200px;
+    max-height: 241px;
   }
 
   .service-wrap ul {
@@ -261,6 +273,10 @@
 
   .service-wrap ul li a {
     padding-bottom: 15px !important;
+  }
+
+  .service-wrap ul li:last-child a {
+    padding-bottom: 0 !important;
   }
 
   footer #footer-logo,
@@ -293,7 +309,22 @@
 }
 
 @media (max-width: 768px) {
-}
+  .topnav_t,
+  .topnav_b {
+    font-size: 0.7rem;
+  }
 
-@media (max-width: 375px) {
+  footer ul li {
+    font-size: 0.7rem;
+  }
+
+  #article_b span {
+    font-size: 1rem;
+  }
+
+  .article_more {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.8rem;
+  }
 }

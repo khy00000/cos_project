@@ -23,10 +23,6 @@ body {
   color: #282828;
 }
 
-body.fixed-nav-padding {
-  padding-top: 70px;
-}
-
 ul,
 li {
   list-style: none;
@@ -43,7 +39,7 @@ button {
 }
 
 .hidden {
-  color: transparent;
+  display: none;
 }
 
 /* 헤더 */

@@ -1,10 +1,7 @@
 // 띠 배너 닫기
-$(".topnav_t_close").on("click", function () {
-  $(".topnav_t").hide();
-});
-
-$(".topnav_b_close").on("click", function () {
-  $(".topnav_b").hide();
+$(".topnav_t_close, .topnav_b_close").on("click", function () {
+  $(this).parent().hide();
+  updateMNavHeight();
 });
 
 // 헤더 2뎁스 메뉴 활성
@@ -39,25 +36,54 @@ $(".nav, .depth2-wrap").on("mouseenter", function () {
 $(window).on("scroll", function () {
   const scrollTop = $(window).scrollTop();
   const topnavHeight = $("#topnav").outerHeight();
+  const navHeight = $("#nav").outerHeight();
 
   if (scrollTop >= topnavHeight) {
     $("#nav").addClass("fixed");
-    $("body").addClass("fixed-nav-padding");
+    $("body").css("padding-top", navHeight);
   } else {
     $("#nav").removeClass("fixed");
-    $("body").removeClass("fixed-nav-padding");
+    $("body").css("padding-top", "0");
   }
+
+  updateMNavHeight();
 });
 
-// 모바일 메뉴 오픈
+// 모바일 메뉴 오픈/클로즈
 $(".mo-button").on("click", function () {
-  const isActive = $(this).hasClass("active");
-
   $(this).toggleClass("active");
   $(".m-nav").toggleClass("active");
+
+  const isOpen = $(".m-nav").hasClass("active");
+  if (isOpen) {
+    $("html").addClass("m-nav-open");
+  } else {
+    $("html").removeClass("m-nav-open");
+    resetMobileAccordion();
+  }
+
+  updateMNavHeight();
 });
 
-// 모바일 12depth 메뉴 토글
+// 모바일 메뉴 높이 업데이트
+function updateMNavHeight() {
+  if ($(window).width() <= 1024) {
+    const $nav = $("#nav");
+    const navH = $nav.outerHeight() || 0;
+
+    const tH = $(".topnav_t:visible").outerHeight() || 0;
+    const bH = $(".topnav_b:visible").outerHeight() || 0;
+    const bannersH = tH + bH;
+
+    const isFixed = $nav.hasClass("fixed");
+
+    const offset = isFixed ? navH : navH + bannersH;
+
+    $(".m-nav").css("height", `calc(100vh - ${offset}px)`);
+  }
+}
+
+// 모바일 메뉴 토글
 $(".m-depth1 > li").on("click", function () {
   const isActive = $(this).hasClass("active");
 
@@ -67,6 +93,11 @@ $(".m-depth1 > li").on("click", function () {
     $(this).addClass("active");
   }
 });
+
+// 모바일 메뉴 토글 리셋
+function resetMobileAccordion() {
+  $(".m-depth1 > li").removeClass("active");
+}
 
 // 모바일 섹션 슬라이드
 $(function () {
@@ -101,6 +132,10 @@ $(function () {
       }
     }, 5000);
   }
+
+  $(window).on("resize", function () {
+    location.reload();
+  });
 });
 
 // 모바일 서비스 아코디언 메뉴
