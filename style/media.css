@@ -60,11 +60,6 @@
 }
 
 @media (max-width: 1024px) {
-  html.m-nav-open {
-    overflow: hidden;
-    overscroll-behavior: none;
-  }
-
   .m-nav {
     overflow-y: auto;
   }
@@ -87,8 +82,8 @@
     display: none;
   }
 
-  .country,
-  .login {
+  .gbnav-country,
+  .gbnav-login {
     display: none !important;
   }
 
@@ -187,7 +182,7 @@
     border-top: 1px solid #e0e0e0;
   }
 
-  .m-gbnav-dep2 li a {
+  .m-gbnav-dep2 li a, .m-gbnav-dep2 li button {
     display: block;
     font-size: 0.8rem;
     padding: 15px;

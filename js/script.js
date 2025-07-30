@@ -56,9 +56,9 @@ $(".mo-button").on("click", function () {
 
   const isOpen = $(".m-nav").hasClass("active");
   if (isOpen) {
-    $("html").addClass("m-nav-open");
+    $("html").addClass("m-open");
   } else {
-    $("html").removeClass("m-nav-open");
+    $("html").removeClass("m-open");
     resetMobileAccordion();
   }
 
@@ -85,13 +85,7 @@ function updateMNavHeight() {
 
 // 모바일 메뉴 토글
 $(".m-depth1 > li").on("click", function () {
-  const isActive = $(this).hasClass("active");
-
-  $(this).removeClass("active");
-
-  if (!isActive) {
-    $(this).addClass("active");
-  }
+  $(this).toggleClass("active");
 });
 
 // 모바일 메뉴 토글 리셋
@@ -134,18 +128,44 @@ $(function () {
   }
 
   $(window).on("resize", function () {
+    if ($("#login").hasClass("active")) {
+      // 로그인 창이 열려 있으면 리로드하지 않음
+      return;
+    }
+
     location.reload();
   });
 });
 
 // 모바일 서비스 아코디언 메뉴
 $(".service-wrap").on("click", function () {
-  const $target = $(this);
-  const isActive = $target.hasClass("active");
+  $(this).toggleClass("active");
+});
 
-  $target.removeClass("active");
+// 로그인 창 온오프
+$(".login-open").on("click", function () {
+  $("#login").addClass("active");
+  $(".menueffect").addClass("login-active");
 
-  if (!isActive) {
-    $target.addClass("active");
+  const isOpen = $("#login").hasClass("active");
+  if (isOpen) {
+    $("html").addClass("m-open");
+  } else {
+    $("html").removeClass("m-open");
+  }
+});
+
+$(".login-close").on("click", function () {
+  $("#login").removeClass("active");
+  $(".menueffect").removeClass("login-active");
+  $("html").removeClass("m-open");
+});
+
+// 오버레이 클릭시 로그인창 벗어남
+$(".menueffect").on("mousedown touchstart", function (e) {
+  if ($(e.target).is(".menueffect")) {
+    $("#login").removeClass("active");
+    $(".menueffect").removeClass("login-active");
+    $("html").removeClass("m-open");
   }
 });

@@ -14,7 +14,7 @@ function success(position) {
     function (data) {
       var $country = data.sys.country;
 
-      $(".country, .m-country")
+      $(".gbnav-country, .m-country")
         .text("배송국가 : " + $country)
         .show();
     }
