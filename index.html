@@ -395,32 +395,58 @@
     </div>
 
     <!-- 메뉴 오픈 전체 영역 화이트 효과 -->
-    <div class="menueffect"></div>
+    <div class="overlay"></div>
 
     <!-- 로그인 팝업 -->
     <div id="login">
-      <button class="login-close">
-        <i class="bi bi-x-lg"></i>
-      </button>
-
-      <p class="login">로그인</p>
-      <div class="line hidden">null</div>
-      <p class="padding">아이디 또는 이메일</p>
-      <input type="text" />
-      <p class="padding">비밀번호</p>
-      <input type="password" />
-      <a href="#none" class="loginbutton">로그인</a>
-      <div class="idsearch">
-        <a href="#none">아이디 찾기</a>
-        <a href="#none">비밀번호 찾기</a>
+      <div class="login-top">
+        <p>로그인 또는 회원가입</p>
+        <button class="login-close">
+          <i class="bi bi-x-lg"></i>
+        </button>
       </div>
-      <p class="kakaoment">카카오 계정을 연동해 간편하게 로그인해보세요</p>
-      <a href="#none" class="kakaologin">카카오 로그인</a>
-      <p class="hdidment">
-        COS 온라인 스토어는 더현대닷컴이 운영·제공하는 사이트로 기존 회원은
-        더현대닷컴 아이디와 비밀번호로 바로 이용 가능합니다.
-      </p>
-      <a href="#none" class="order">비회원 주문조회</a>
+
+      <div class="login-area">
+        <label for="id" class="hidden">아이디 또는 이메일</label>
+        <input
+          type="text"
+          class="id-input"
+          placeholder="아이디 또는 이메일"
+          maxlength="100"
+          name="id"
+        />
+        <label for="password" class="hidden">비밀번호</label>
+        <input
+          type="password"
+          class="pw-input"
+          placeholder="비밀번호"
+          maxlength="30"
+          name="password"
+        />
+        <a href="#none" class="login-button">로그인</a>
+        <a href="#none" class="join-button">회원가입</a>
+        <div class="found">
+          <a href="#none">아이디 찾기</a>
+          <a href="#none">비밀번호 찾기</a>
+        </div>
+      </div>
+
+      <div class="snslogin-area">
+        <p class="kakaologin-ment">
+          카카오 계정을 연동해 간편하게 로그인해보세요.
+        </p>
+        <a href="#none" class="kakaologin">
+          <span class="kakaoicon"></span>
+          <span>
+            카카오 로그인
+          </span>
+        </a>
+        <p class="snslogin-ment">
+          COS 온라인 스토어는 더현대닷컴이 운영·제공하는 사이트로 기존 회원은
+          더현대닷컴 아이디와 비밀번호로 바로 이용 가능합니다.
+        </p>
+        <a href="#none" class="order">비회원 주문조회</a>
+      </div>
     </div>
 
     <!-- 스크립트 -->

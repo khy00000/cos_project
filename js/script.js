@@ -15,7 +15,7 @@ $(".nav>ul>li").on("mouseenter", function () {
   });
 
   $("#nav").addClass("active");
-  $(".menueffect").addClass("active");
+  $(".overlay").addClass("active");
 });
 
 let menuCloseTimer;
@@ -24,7 +24,7 @@ $(".nav, .depth2-wrap").on("mouseleave", function () {
     $(".depth2-wrap").removeClass("active");
     $(".depth2").removeClass("active");
     $("#nav").removeClass("active");
-    $(".menueffect").removeClass("active");
+    $(".overlay").removeClass("active");
   }, 100);
 });
 
@@ -53,6 +53,7 @@ $(window).on("scroll", function () {
 $(".mo-button").on("click", function () {
   $(this).toggleClass("active");
   $(".m-nav").toggleClass("active");
+  $("#nav").toggleClass("active");
 
   const isOpen = $(".m-nav").hasClass("active");
   if (isOpen) {
@@ -145,7 +146,7 @@ $(".service-wrap").on("click", function () {
 // 로그인 창 온오프
 $(".login-open").on("click", function () {
   $("#login").addClass("active");
-  $(".menueffect").addClass("login-active");
+  $(".overlay").addClass("login-active");
 
   const isOpen = $("#login").hasClass("active");
   if (isOpen) {
@@ -157,15 +158,15 @@ $(".login-open").on("click", function () {
 
 $(".login-close").on("click", function () {
   $("#login").removeClass("active");
-  $(".menueffect").removeClass("login-active");
+  $(".overlay").removeClass("login-active");
   $("html").removeClass("m-open");
 });
 
 // 오버레이 클릭시 로그인창 벗어남
-$(".menueffect").on("mousedown touchstart", function (e) {
-  if ($(e.target).is(".menueffect")) {
+$(".overlay").on("mousedown touchstart", function (e) {
+  if ($(e.target).is(".overlay")) {
     $("#login").removeClass("active");
-    $(".menueffect").removeClass("login-active");
+    $(".overlay").removeClass("login-active");
     $("html").removeClass("m-open");
   }
 });

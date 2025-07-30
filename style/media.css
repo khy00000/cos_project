@@ -31,7 +31,7 @@
     gap: 17px;
   }
 
-  .gbnav a {
+  .gbnav a, .gbnav .gbnav-login {
     font-size: 0.8rem;
   }
 
@@ -183,6 +183,7 @@
   }
 
   .m-gbnav-dep2 li a, .m-gbnav-dep2 li button {
+    width: 100%;
     display: block;
     font-size: 0.8rem;
     padding: 15px;
@@ -300,6 +301,10 @@
 
   .copyright {
     padding-top: 20px;
+  }
+
+  #login{
+    width: 100%;
   }
 }
 
