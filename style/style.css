@@ -280,7 +280,7 @@ header {
 }
 
 /* 위치 정보 */
-.country {
+.gbnav-country {
   display: none;
 }
 
@@ -572,7 +572,7 @@ footer ul li {
   margin-bottom: 25px;
 }
 
-.kakaologin {
+#kakaologin {
   display: block;
   width: 100%;
   height: 50px;

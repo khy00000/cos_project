@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COS - Kakao Callback</title>
+  </head>
+  <body>
+    <div id="kakaocallback">
+      <span> 로그인 처리 중... </span>
+    </div>
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script>
+      // sdk 초기화
+      Kakao.init("767a22495c7396d75b6be80f52a05963");
+
+      const status = document.querySelector("#kakaocallback > span");
+      // 토큰 존재 여부 확인
+      const token = Kakao.Auth.getAccessToken();
+
+      if (!token) {
+        // URL에 error 파라미터가 들어오는 경우 (사용자 취소)
+        const params = new URLSearchParams(location.hash.replace(/^#/, ""));
+        const err = params.get("error") || "(토큰 없음)";
+        const desc = params.get("error_description") || "";
+
+        status.textContent =
+          `로그인 실패${err ? `: ${err}` : ""}
+            ${desc ? `- ${decodeURIComponent(desc)}` : ""}\n` +
+          `설정(허용 도메인/Redirect URI)을 확인하고 다시 시도하세요.`;
+
+        // setTimeout(() => location.replace("http://127.0.0.1:5500/"), 1000);
+      } else {
+        // 로그인 후 사용자 정보 조회
+        Kakao.API.request({ url: "/v2/user/me" })
+          .then((res) => {
+            const nickname = res?.kakao_account?.profile?.nickname || "사용자";
+            status.textContent = `로그인 성공: ${nickname}\n잠시 후 메인으로 이동합니다...`;
+            setTimeout(() => location.replace("http://127.0.0.1:5500/"), 300);
+          })
+          .catch((err) => {
+            console.error(err);
+            status.textContent = "사용자 정보 조회 실패";
+            // setTimeout(() => location.replace("http://127.0.0.1:5500/"), 1000);
+          });
+      }
+    </script>
+  </body>
+</html>
