@@ -189,6 +189,10 @@
     padding: 15px;
   }
 
+  .m-country-wrap{
+    display: none;
+  }
+
   section {
     height: calc(100vh - 114px);
     overflow: hidden;
