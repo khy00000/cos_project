@@ -1,10 +1,13 @@
-const PcloginBtn = document.querySelector(".gbnav-login");
-const MologinBtn = document.querySelector(".m-login");
-const PclogoutBtn = document.querySelector(".log-out");
-const MologoutBtn = document.querySelector(".m-log-out");
+const PcLoginBtn = document.querySelector(".gbnav-login");
+const MoLoginBtn = document.querySelector(".m-login");
+const PcProfileBtn = document.querySelector(".goprofile");
+const MoProfileBtn = document.querySelector(".m-goprofile");
 
 const isPc = window.innerWidth > 1024;
 const isMobile = window.innerWidth <= 1024;
+
+const profileNickname = document.querySelector(".profile-nickname");
+const profileEmail = document.querySelector(".profile-email");
 
 // 로그인 상태 확인 함수
 function isLogin() {
@@ -14,20 +17,25 @@ function isLogin() {
 // 로그인 후 UI 수정
 window.addEventListener("DOMContentLoaded", function () {
   const nickname = sessionStorage.getItem("kakao_nickname");
+  const email = sessionStorage.getItem("kakao_email");
 
   if (isLogin() && isPc) {
-    PcloginBtn.style.display = "none";
-    PclogoutBtn.style.display = "block";
-    PclogoutBtn.innerHTML = `${nickname}님`;
+    PcLoginBtn.style.display = "none";
+    PcProfileBtn.style.display = "block";
+    PcProfileBtn.innerHTML = `${nickname}님`;
+    profileNickname.innerHTML = `${nickname}님`;
+    profileEmail.innerHTML = email;
   } else if (isLogin() && isMobile) {
-    MologinBtn.style.display = "none";
-    MologoutBtn.style.display = "block";
-    MologoutBtn.innerHTML = `${nickname}님`;
+    MoLoginBtn.style.display = "none";
+    MoProfileBtn.style.display = "block";
+    MoProfileBtn.innerHTML = `${nickname}님`;
+    profileNickname.innerHTML = `${nickname}님`;
+    profileEmail.innerHTML = email;
   }
 });
 
 // 로그아웃 처리 함수
-function logout() {
+function logoutWithKakao() {
   sessionStorage.removeItem("kakao_nickname");
   sessionStorage.removeItem("kakao_email");
   sessionStorage.removeItem("kakao_profile");
@@ -35,19 +43,15 @@ function logout() {
   alert("로그아웃이 완료되었습니다.");
 
   if (isPc) {
-    PclogoutBtn.style.display = "none";
-    PcloginBtn.style.display = "block";
+    PcProfileBtn.style.display = "none";
+    PcLoginBtn.style.display = "block";
   } else if (isMobile) {
-    MologoutBtn.style.display = "none";
-    MologinBtn.style.display = "block";
+    MoProfileBtn.style.display = "none";
+    MoLoginBtn.style.display = "block";
   }
+
+  // 리디렉션
+  setTimeout(() => {
+    location.href = "index.html";
+  }, 500);
 }
-
-// 로그아웃 버튼
-PclogoutBtn.addEventListener("click", () => {
-  logout();
-});
-
-MologoutBtn.addEventListener("click", () => {
-  logout();
-});

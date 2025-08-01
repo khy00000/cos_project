@@ -137,7 +137,7 @@ $(".service-wrap").on("click", function () {
 // 로그인 창 온오프
 $(".login-open").on("click", function () {
   $("#login").addClass("active");
-  $(".overlay").addClass("login-active");
+  $(".overlay").addClass("loginprofile-active");
 
   const isOpen = $("#login").hasClass("active");
   if (isOpen) {
@@ -147,26 +147,49 @@ $(".login-open").on("click", function () {
   }
 });
 
+// 로그인 클로즈
 $(".login-close").on("click", function () {
   $("#login").removeClass("active");
-  $(".overlay").removeClass("login-active");
+  $(".overlay").removeClass("loginprofile-active");
   $("html").removeClass("m-open");
 });
 
-// 오버레이 클릭시 로그인창 벗어남
+// 프로필 창 온오프
+$(".goprofile, .m-goprofile").on("click", function () {
+  $("#profile").addClass("active");
+  $(".overlay").addClass("loginprofile-active");
+
+  const isOpen = $("#profile").hasClass("active");
+  if (isOpen) {
+    $("html").addClass("m-open");
+  } else {
+    $("html").removeClass("m-open");
+  }
+});
+
+// 프로필 클로즈
+$(".profile-close").on("click", function () {
+  $("#profile").removeClass("active");
+  $(".overlay").removeClass("loginprofile-active");
+  $("html").removeClass("m-open");
+});
+
+// 오버레이 클릭시 로그인/프로필 창 벗어남
 $(".overlay").on("mousedown touchstart", function (e) {
   if ($(e.target).is(".overlay")) {
     $("#login").removeClass("active");
-    $(".overlay").removeClass("login-active");
+    $("#profile").removeClass("active");
+    $(".overlay").removeClass("loginprofile-active");
     $("html").removeClass("m-open");
   }
 });
 
 $(window).on("resize", function () {
-  if ($("#login").hasClass("active")) {
-    // 로그인 창이 열려 있으면 리로드하지 않음
+  if (
+    $("#login").hasClass("loginprofile") ||
+    $("#profile").hasClass("loginprofile")
+  ) {
     return;
   }
-
   location.reload();
 });

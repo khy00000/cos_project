@@ -255,7 +255,7 @@ header {
   visibility: visible;
 }
 
-.overlay.login-active {
+.overlay.loginprofile-active {
   opacity: 1;
   visibility: visible;
   z-index: 99;
@@ -280,7 +280,7 @@ header {
   color: #a0a0a0;
 }
 
-.log-out {
+.goprofile {
   display: none;
 }
 
@@ -478,7 +478,7 @@ footer ul li {
   padding-top: 30px;
 }
 
-/* 로그인 팝업 */
+/* 로그인 모달 */
 #login {
   width: 400px;
   height: 100vh;
@@ -608,4 +608,74 @@ footer ul li {
   text-decoration: underline;
   text-underline-offset: 4px;
   color: #747474;
+}
+
+/* 프로필 모달 */
+#profile {
+  width: 400px;
+  height: 100vh;
+  background-color: white;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  display: none;
+  padding: 15px;
+  font-size: 0.9rem;
+}
+
+#profile.active {
+  display: flex;
+}
+
+.profile-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.profile-top p {
+  font-weight: bold;
+}
+
+.profile-nickname {
+  margin-bottom: 30px;
+}
+
+#profile > a {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.profile-address,
+.profile-size,
+.profile-email-t,
+.profile-phone,
+.profile-pw-t {
+  color: #747474;
+}
+
+.profile-email-t {
+  margin-bottom: 10px;
+}
+
+.profile-update-t {
+  padding: 10px;
+  font-size: 0.7rem;
+  width: 100%;
+  height: 50px;
+  background-color: #ffd8d6;
+  margin-bottom: 20px;
+}
+
+.progfile-logout a {
+  display: block;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: #747474;
+  margin-bottom: 50px;
 }
