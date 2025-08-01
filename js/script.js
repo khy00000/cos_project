@@ -127,15 +127,6 @@ $(function () {
       }
     }, 5000);
   }
-
-  $(window).on("resize", function () {
-    if ($("#login").hasClass("active")) {
-      // 로그인 창이 열려 있으면 리로드하지 않음
-      return;
-    }
-
-    location.reload();
-  });
 });
 
 // 모바일 서비스 아코디언 메뉴
@@ -169,4 +160,13 @@ $(".overlay").on("mousedown touchstart", function (e) {
     $(".overlay").removeClass("login-active");
     $("html").removeClass("m-open");
   }
+});
+
+$(window).on("resize", function () {
+  if ($("#login").hasClass("active")) {
+    // 로그인 창이 열려 있으면 리로드하지 않음
+    return;
+  }
+
+  location.reload();
 });

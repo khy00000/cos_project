@@ -174,6 +174,7 @@
             <a href="#none" class="gbnav-country">배송국가 : </a>
             <a href="#none"><i class="bi bi-search"></i></a>
             <button class="gbnav-login login-open">로그인</button>
+            <button class="log-out">로그아웃</button>
             <a href="#none"><i class="bi bi-heart"></i></a>
             <a href="#none"><i class="bi bi-bag"></i></a>
           </div>
@@ -254,6 +255,7 @@
             <ul class="m-gbnav-dep2">
               <li>
                 <button class="m-login login-open">로그인</button>
+                <button class="m-log-out">로그아웃</button>
               </li>
               <li class="m-country-wrap">
                 <a href="#none" class="m-country">배송국가 : </a>
@@ -451,7 +453,24 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="./js/script.js"></script>
     <script src="./js/geolocation.js"></script>
-    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.5/kakao.min.js" integrity="sha384-dok87au0gKqJdxs7msEdBPNnKSRT+/mhTVzq+qOhcL464zXwvcrpjeWvyj1kCdq6" crossorigin="anonymous"></script>
-    <script src="./js/kakaoRd.js"></script>
+    <script
+      src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.5/kakao.min.js"
+      integrity="sha384-dok87au0gKqJdxs7msEdBPNnKSRT+/mhTVzq+qOhcL464zXwvcrpjeWvyj1kCdq6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/loginout.js"></script>
+    <script src="./js/config.js"></script>
+
+    <script>
+      // SDK 초기화
+      Kakao.init(KAKAO_JS_KEY);
+
+      function loginWithKakao() {
+        Kakao.Auth.authorize({
+          redirectUri: KAKAO_REDIRECT_URI,
+          scope: "profile_nickname,profile_image,account_email",
+        });
+      }
+    </script>
   </body>
 </html>

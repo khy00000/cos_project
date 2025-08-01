@@ -31,7 +31,9 @@
     gap: 17px;
   }
 
-  .gbnav a, .gbnav .gbnav-login {
+  .gbnav a,
+  .gbnav .gbnav-login,
+  .log-out {
     font-size: 0.8rem;
   }
 
@@ -182,14 +184,28 @@
     border-top: 1px solid #e0e0e0;
   }
 
-  .m-gbnav-dep2 li a, .m-gbnav-dep2 li button {
+  .m-login {
     width: 100%;
     display: block;
     font-size: 0.8rem;
     padding: 15px;
   }
 
-  .m-country-wrap{
+  .m-log-out {
+    display: none;
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+
+  .m-gbnav-dep2 li a {
+    width: 100%;
+    display: block;
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+
+  .m-country-wrap {
     display: none;
   }
 
@@ -307,7 +323,7 @@
     padding-top: 20px;
   }
 
-  #login{
+  #login {
     width: 100%;
   }
 }

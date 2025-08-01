@@ -1,0 +1,2 @@
+const KAKAO_JS_KEY = "767a22495c7396d75b6be80f52a05963";
+const KAKAO_REDIRECT_URI = "http://127.0.0.1:5500/callback.html";

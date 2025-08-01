@@ -6,26 +6,28 @@
     <title>Login - COS</title>
   </head>
   <body>
-    <div id="kakaocallback">
+    <!-- <div id="kakaocallback">
       <span> 로그인 처리 중... </span>
-    </div>
+    </div> -->
 
     <script
       src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.5/kakao.min.js"
       integrity="sha384-dok87au0gKqJdxs7msEdBPNnKSRT+/mhTVzq+qOhcL464zXwvcrpjeWvyj1kCdq6"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/config.js"></script>
     <script>
       // SDK 초기화
-      Kakao.init("767a22495c7396d75b6be80f52a05963");
-      console.log("Kakao SDK 초기화 여부:", Kakao.isInitialized());
+      Kakao.init(KAKAO_JS_KEY);
+      // console.log("Kakao SDK 초기화 여부:", Kakao.isInitialized());
 
       const callbackUi = document.querySelector("#kakaocallback > span");
+
       const urlParams = new URLSearchParams(window.location.search);
       const code = urlParams.get("code");
 
       if (!code) {
-        console.error("인가코드 없음");
+        // console.error("인가코드 없음");
       } else {
         // access_token REST API로 토큰 요청
         fetch("https://kauth.kakao.com/oauth/token", {
@@ -35,14 +37,15 @@
           },
           body: new URLSearchParams({
             grant_type: "authorization_code",
-            client_id: "767a22495c7396d75b6be80f52a05963",
-            redirect_uri: "http://127.0.0.1:5500/callback.html",
+            client_id: KAKAO_JS_KEY,
+            redirect_uri: KAKAO_REDIRECT_URI,
             code: code,
           }),
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log("토큰 정보:", data);
+            // console.log("토큰 정보:", data);
+
             const accessToken = data.access_token;
 
             // JS SDK 수동으로 토큰 세팅
@@ -54,15 +57,28 @@
             });
           })
           .then((res) => {
-            console.log("사용자 정보:", res);
-            callbackUi.textContent = `${res.kakao_account.profile.nickname}님 환영합니다!`;
+            // console.log("사용자 정보:", res);
+
+            // 로그인 완료 후 사용자 정보 세션스토리지에 저장
+            const nickname = res.kakao_account.profile.nickname;
+            const email = res.kakao_account.email;
+            const profileImg = res.kakao_account.profile.profile_image_url;
+
+            // 사용자 정보 세션 스토리지에 저장
+            sessionStorage.setItem("kakao_nickname", nickname);
+            sessionStorage.setItem("kakao_email", email);
+            sessionStorage.setItem("kakao_profile", profileImg);
+
+            // 로그인처리
+            // callbackUi.textContent = `${res.kakao_account.profile.nickname}님 환영합니다!`;
+
             // 리디렉션
-            // setTimeout(() => {
-            //   location.href = "index.html";
-            // }, 1000);
+            setTimeout(() => {
+              location.href = "index.html";
+            }, 1000);
           })
           .catch((err) => {
-            console.error("토큰 요청 실패:", err);
+            // console.error("토큰 요청 실패:", err);
           });
       }
     </script>

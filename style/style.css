@@ -270,13 +270,18 @@ header {
 }
 
 .gbnav a,
-.gbnav .gbnav-login {
+.gbnav .gbnav-login,
+.log-out {
   font-size: 0.9rem;
 }
 
 .gbnav a:hover,
-.gbnav .gbnav-login:hover {
+.gbnav .gbnav-login:hover .log-out:hover {
   color: #a0a0a0;
+}
+
+.log-out {
+  display: none;
 }
 
 /* 위치 정보 */
