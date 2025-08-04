@@ -271,12 +271,13 @@ header {
 
 .gbnav a,
 .gbnav .gbnav-login,
-.log-out {
+.goprofile {
   font-size: 0.9rem;
 }
 
 .gbnav a:hover,
-.gbnav .gbnav-login:hover .log-out:hover {
+.gbnav .gbnav-login:hover,
+.goprofile:hover {
   color: #a0a0a0;
 }
 
@@ -449,6 +450,10 @@ article {
   font-size: 0.8rem;
   text-decoration: none;
   white-space: nowrap;
+}
+
+#service ul li:hover a {
+  color: #a0a0a0;
 }
 
 /* 푸터 */

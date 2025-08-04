@@ -33,7 +33,7 @@
 
   .gbnav a,
   .gbnav .gbnav-login,
-  .islogin-nname {
+  .goprofile {
     font-size: 0.8rem;
   }
 
@@ -97,6 +97,10 @@
 
   .mo-button {
     display: block;
+  }
+
+  .mo-button .bi-list:hover {
+    color: #a0a0a0;
   }
 
   .mo-button.active .bi-list::before {
@@ -262,6 +266,10 @@
     padding-bottom: unset;
   }
 
+  .service-wrap h2:hover {
+    color: #a0a0a0;
+  }
+
   .service-wrap h2::after {
     content: "\F4FE";
     font-family: "bootstrap-icons";
@@ -323,7 +331,8 @@
     padding-top: 20px;
   }
 
-  #login, #profile {
+  #login,
+  #profile {
     width: 100%;
   }
 }
