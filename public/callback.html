@@ -27,7 +27,7 @@
       const code = urlParams.get("code");
 
       if (!code) {
-        // console.error("인가코드 없음");
+        console.error("인가코드 없음");
       } else {
         // access_token REST API로 토큰 요청
         fetch("https://kauth.kakao.com/oauth/token", {
@@ -44,7 +44,7 @@
         })
           .then((res) => res.json())
           .then((data) => {
-            // console.log("토큰 정보:", data);
+            console.log("토큰 정보:", data);
 
             const accessToken = data.access_token;
 
@@ -57,7 +57,7 @@
             });
           })
           .then((res) => {
-            // console.log("사용자 정보:", res);
+            console.log("사용자 정보:", res);
 
             // 로그인 완료 후 사용자 정보 세션스토리지에 저장
             const nickname = res.kakao_account.profile.nickname;
@@ -78,7 +78,7 @@
             }, 1000);
           })
           .catch((err) => {
-            // console.error("토큰 요청 실패:", err);
+            console.error("토큰 요청 실패:", err);
           });
       }
     </script>
