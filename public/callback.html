@@ -72,6 +72,9 @@
             // 로그인처리
             // callbackUi.textContent = `${res.kakao_account.profile.nickname}님 환영합니다!`;
 
+            // 로그인 완료 후 모달 복구 방지 플래그 설정
+            localStorage.setItem("skipModalRestore", "true");
+
             // 리디렉션
             setTimeout(() => {
               location.href = "index.html";
