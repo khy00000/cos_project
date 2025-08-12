@@ -184,12 +184,32 @@ $(".overlay").on("mousedown touchstart", function (e) {
   }
 });
 
+// $(window).on("resize", function () {
+//   if (
+//     $("#login").hasClass("loginprofile") ||
+//     $("#profile").hasClass("loginprofile")
+//   ) {
+//     return;
+//   }
+//   location.reload();
+// });
+
+// 가로 사이즈 변할때만 리로드
+let lastWidth = $(window).width();
+
 $(window).on("resize", function () {
-  if (
-    $("#login").hasClass("loginprofile") ||
-    $("#profile").hasClass("loginprofile")
-  ) {
-    return;
+  const currentWidth = $(window).width();
+
+  if (currentWidth !== lastWidth) {
+    lastWidth = currentWidth; // 가로 폭 갱신
+
+    if (
+      $("#login").hasClass("active") ||
+      $("#profile").hasClass("active")
+    ) {
+      return;
+    }
+
+    location.reload();
   }
-  location.reload();
 });
