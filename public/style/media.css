@@ -63,7 +63,8 @@
 
 @media (max-width: 1024px) {
   .m-nav {
-    overflow-y: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 
   #nav {
