@@ -12,7 +12,6 @@ html {
 }
 
 html.m-open {
-  overflow: hidden;
   overscroll-behavior: none;
 }
 
