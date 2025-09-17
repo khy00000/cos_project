@@ -62,11 +62,6 @@
 }
 
 @media (max-width: 1024px) {
-  .m-nav {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-
   #nav {
     height: 50px;
     padding: 0 15px;
@@ -122,8 +117,9 @@
     gap: 250px;
     border-bottom: 1px solid #282828;
     transition: height 0.3s ease-in;
-    overflow-y: auto;
+    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    -webkit-transform: translate3d(0,0,0);
   }
 
   .m-nav.active {
